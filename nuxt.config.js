@@ -41,6 +41,11 @@ export default {
   buildModules: [
   ],
 
+  elementUI: {
+    locale: 'zh-CN', // 默认语言
+    size: 'medium' // 默认尺寸
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
   ],
