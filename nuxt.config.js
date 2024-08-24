@@ -82,9 +82,8 @@ export default {
   hooks: {
     'generate:page': (page) => {
       page.html = page.html
-        .replace(/<script * src="([^"]+)"(.*?)>/g, '<script th:src="@{$1}"$2>')   // JavaScript
-        .replace(/<link rel="stylesheet" href="([^"]+)"(.*?)>/g, '<link th:href="@{$1}"$2>')// CSS
-        .replace(/<link rel="preload" href="([^"]+)"(.*?)>/g, '<link th:href="@{$1}"$2>'); // CSS
+        .replace(/<script\s+([^>]+)?src="([^"]+)"([^>]*)>/g, '<script $1 th:src="@{$2}"$3>')   // JavaScript
+        .replace(/<link\s+([^>]+)?href="([^"]+)"([^>]*)>/g, '<link $1 th:href="@{$2}" $3>')// CSS
     },
     'generate:done': async (generator) => {
       const outputDir = path.join(generator.options.generate.dir);
