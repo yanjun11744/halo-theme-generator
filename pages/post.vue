@@ -4,7 +4,6 @@
     <h1>{{ title }}</h1>
     <h1 th:text="${post.spec.title}"></h1>
     <article>
-      <!--    element组件上使用thymeleaf语法-->
       <el-button type="primary" th:text="${post.spec.title}"/>
     </article>
   </div>
