@@ -4,12 +4,13 @@
     <h1>{{ title }}</h1>
     <h1 th:text="${post.spec.title}"></h1>
     <article>
-      <el-button type="primary" th:text="${post.spec.title}"/>
+      <el-button type="primary" th:text="${post.spec.title}" />
+      <el-input v-model="title" placeholder="请输入内容"></el-input>
     </article>
   </div>
 </template>
 <script setup>
-  import {ref} from "vue";
+  import {ref} from "vue"
   const title = ref('post')
 </script>
 
